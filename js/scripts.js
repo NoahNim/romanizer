@@ -11,3 +11,16 @@ function romanize(num){
   }
   return result;
 };
+
+$(document).ready(function(){
+  $("#formOne").submit(function(event){
+    event.preventDefault();
+    var userInput = parseInt($("input#userInput").val());
+
+    var romanizedNumber = romanize(userInput);
+
+    $("#result").text(romanizedNumber);
+    $("#result").show();
+
+  });
+});
