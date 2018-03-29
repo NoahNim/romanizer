@@ -16,11 +16,14 @@ $(document).ready(function(){
   $("#formOne").submit(function(event){
     event.preventDefault();
     var userInput = parseInt($("input#userInput").val());
-
     var romanizedNumber = romanize(userInput);
 
-    $("#result").text(romanizedNumber);
-    $("#result").show();
+    if (userInput > 3999){
+      alert("Please input a numbewr between 1 and 3999 because Roman numerals don't go past 4000. The Romans were uncivilized.")
+    } else {
+      $("#result").text(romanizedNumber);
+      $("#result").show();
+    }
 
   });
 });
